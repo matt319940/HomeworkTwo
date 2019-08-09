@@ -1,0 +1,63 @@
+
+
+
+.background{
+	background-image: url("https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+.layer{
+	background-color: rgba(216, 224, 230, 0.7);
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	z-index: -1;
+}
+
+.navbar-brand{
+	position: relative;
+	right: 25px;
+	float: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+	}
+
+.navbar-dark .navbar-brand {
+    color: #D8E0E6
+}
+	
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #25506B;
+}
+
+.dropdown-toggle {
+    color: #D8E0E6;
+}
+
+.dropdown-toggle::after {
+	content: none;
+	}
+	
+.dropdown-menu{
+	background-color: #343a40;
+	margin: 0.45rem 0 0 -1.25rem;
+	}
+.dropdown-item{
+	color: #D8E0E6;
+	padding: 1rem 1.5rem;
+	}
+
+a:hover.dropdown-item{
+	background-color: #25506B;
+	color: #D8E0E6;
+	}
+	
+.card{
+	margin: 0 auto;
+    float: none;
+    margin-bottom: 10px; 
+	top: 100px;
+	}
