@@ -56,8 +56,24 @@
 		object-fit: contain;
 		object-position: 50% 50%;
 	}
+	.carousel-caption{
+		color: #D8E0E6;
+		}
+	.bd-example{
+		border-bottom: solid #A8AEB3 10px;
+		border-bottom-left-radius: 3%;
+		border-bottom-right-radius: 3%;
+	}
 /* Carousel */
 
+/* Cards */
+	.card{
+		margin-right: 20px!important;
+	}
+	.card:hover{
+	
+	}
+/* Cards */
 
 
 
