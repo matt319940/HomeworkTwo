@@ -44,3 +44,8 @@
 		}
 	}
 /* Nav Bar */
+
+.carousel-inner{
+z-index: -1;
+max-height: 200px;
+}
