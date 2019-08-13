@@ -45,7 +45,18 @@
 	}
 /* Nav Bar */
 
-.carousel-inner{
-z-index: -1;
-max-height: 200px;
-}
+
+/* Carousel */
+	.carousel-inner{
+		z-index: -1;
+	}
+	img.pos{
+		height: 800px;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+/* Carousel */
+
+
+
+
