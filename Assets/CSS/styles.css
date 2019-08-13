@@ -1,68 +1,40 @@
-
-
-
-.background{
-	background-image: url("https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-}
-.layer{
-	background-color: rgba(216, 224, 230, 0.7);
-	position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-	z-index: -1;
-}
-
-.navbar-brand{
-	position: relative;
-	right: 25px;
-	float: none;
-    margin: 0 auto;
-    margin-bottom: 10px;
+/* Background Image */
+	body{
+		background-image: url("/Assets/Images/footer_lodyas.png");
 	}
+/* Background Image */
 
-.navbar-dark .navbar-brand {
-    color: #D8E0E6
-}
-	
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color: #25506B;
-}
+/* Nav Image */
+	.imageWrapper{
+		position: absolute;
+		background-color: #343a40;
+		top:0;
+		border-bottom-left-radius:0;
+		border-bottom-right-radius:50%;  
+	}
+	#navImage{
+		position: relative;
+		top:0;
+		border: solid #343a40 8px;
+		border-radius:50%;
+		border-bottom-left-radius: 10%;
+		/* border-top-left-radius: 10%; */
+		width:8rem;
+	}
+	.navbar-brand,a.nav-link{
+		position:relative;
+		left: 125px;
+	}
+/* Nav Image */
 
-.dropdown-toggle {
-    color: #D8E0E6;
-}
-
-.dropdown-toggle::after {
-	content: none;
+/* Nav Bar */
+	.navbar-dark .navbar-nav .nav-link {
+		color: #D8E0E6;
 	}
-	
-.dropdown-menu{
-	background-color: #343a40;
-	margin: 0.45rem 0 0 -1.25rem;
-	top: 45.3px;
+	.navbar-dark .navbar-brand {
+		color: #D8E0E6;
 	}
-.dropdown-item{
-	color: #D8E0E6;
-	padding: 1rem 1.5rem;
+	.mr-auto{
+		
 	}
-
-a:hover.dropdown-item{
-	background-color: #25506B;
-	color: #D8E0E6;
-	}
-	
-img.card{
-	border-radius: 50%;
-	border: solid #25506B 8px;
-}
-.card{
-	margin: 0 auto;
-    float: none;
-    margin-bottom: 10px; 
-	top: 100px;
-	}
+/* Nav Bar */
