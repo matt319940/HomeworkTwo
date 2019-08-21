@@ -1,0 +1,182 @@
+#include <iostream>
+
+void drawMan(int points);
+std::string getAnswer();
+void drawHiddenAnswer(std::string answer);
+std::string getInput(std::string answer);
+int checkIfWon(std::string answer);
+
+int score{ 0 };
+char wrong[] = { '0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0' };
+int num{ 0 };
+
+int main()
+{
+	std::string answer = getAnswer();
+	drawMan(score);
+	drawHiddenAnswer(answer);
+
+	while (score != 7)
+	{
+		system("CLS");
+		std::cout << "Incorrect letters: ";
+		for (int i{}; i < answer.size(); i++)
+		{
+			if (wrong[i] != '0')
+				std::cout << wrong[i];
+		}
+		std::cout << '\n';
+		drawMan(score);
+		drawHiddenAnswer(answer);
+		answer = getInput(answer);
+
+		if (score == 6)
+		{
+			system("CLS");
+			drawMan(score);
+			std::cout << "\nCONGRATULATIONS! You lose! You freaking looser! \n";
+			std::cout << "The answer was: " << answer << '\n';
+			break;
+		}
+
+		if (checkIfWon(answer) == 0)
+		{
+			system("CLS");
+			drawMan(score);
+			std::cout << "\nCONGRATULATIONS! You WON!\n";
+			std::cout << "Answer: " << answer << '\n';
+			break;
+		}
+
+	}
+
+	return 0;
+}
+
+std::string getAnswer()
+{
+	std::string x;
+
+	std::cout << "Enter the answer: ";
+	std::cin >> x;
+
+	return x;
+}
+
+std::string getInput(std::string answer)
+{
+	std::cout << "Enter a character: ";
+	char c;
+	std::cin >> c;
+
+	int test{};
+
+	for (int i{}; i < answer.size(); i++)
+	{
+		if (answer[i] == c)
+		{
+			answer[i] -= 32;
+			test++;
+		}
+	}
+
+	if (test == 0)
+	{
+		score++;
+		wrong[num] = c;
+		num++;
+	}
+
+	return answer;
+}
+
+void drawHiddenAnswer(std::string answer)
+{
+	for (int i{}; i < answer.size(); i++)
+	{
+		if (static_cast<int>(answer[i]) > 64 && static_cast<int>(answer[i]) < 91)
+			std::cout << answer[i];
+		else if (answer[i] == '_')
+			std::cout << " ";
+		else
+			std::cout << "*";
+	}
+	std::cout << '\n';
+}
+
+int checkIfWon(std::string answer)
+{
+	int notWon{};
+
+	for (int i{}; i < answer.size(); i++)
+	{
+		if (static_cast<int>(answer[i]) < 64 || static_cast<int>(answer[i]) > 91 && answer[i] != '_')
+			notWon++;
+	}
+	return notWon;
+}
+
+void drawMan(int points)
+{
+
+	switch (points)
+	{
+	case(0):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|           " << '\n'
+			<< "|           " << '\n'
+			<< "|           " << '\n'
+			<< "|___________" << '\n';
+		break;
+
+	case(1):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|        O  " << '\n'
+			<< "|           " << '\n'
+			<< "|           " << '\n'
+			<< "|___________" << '\n';
+		break;
+	case(2):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|        O  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|           " << '\n'
+			<< "|___________" << '\n';
+		break;
+	case(3):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|        O  " << '\n'
+			<< "|       /|  " << '\n'
+			<< "|           " << '\n'
+			<< "|___________" << '\n';
+		break;
+	case(4):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|        O  " << '\n'
+			<< "|       /|\\" << '\n'
+			<< "|           " << '\n'
+			<< "|___________" << '\n';
+		break;
+	case(5):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|        O  " << '\n'
+			<< "|       /|\\" << '\n'
+			<< "|       /   " << '\n'
+			<< "|___________" << '\n';
+		break;
+	case(6):
+		std::cout << "__________  " << '\n'
+			<< "|        |  " << '\n'
+			<< "|        O  " << '\n'
+			<< "|       /|\\" << '\n'
+			<< "|       / \\" << '\n'
+			<< "|___________" << '\n';
+		break;
+	}
+}
